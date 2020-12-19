@@ -4,83 +4,61 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Day5
+namespace day7
 {
-	class GradFater
-	{
-
-		public void land()
-		{
-			Console.WriteLine("GradFater's land");
-		}
-
-	}
-
-	class Father : GradFater
-	{
-
-		public void home()
-		{
-			Console.WriteLine("Father's home");
-		}
-
-		public void Car()
-		{
-			Console.WriteLine("Father's Car");
-		}
-	}
-
-	// Inherit /derived / extends
-	class Son : Father
-	{
-
-		// son constructor
-		public Son()
-		{
-			Console.WriteLine("Son...");
-		}
-
-		public void mobile()
-		{
-			Console.WriteLine("Son's mobile");
-		}
-	}
-
-	class Daughter : Father
-	{
-
-		// Daughter constructor
-		public Daughter()
-		{
-			Console.WriteLine("Daughter...");
-		}
-
-		public void purse()
-		{
-			Console.WriteLine("Daughter's purse");
-		}
-	}
-
-	class Program
+    interface emp
     {
-        
+        void salary(int hr, int rupes);
 
-        static void Main(string[] args)
-        {
-			Son s = new Son();
-			s.land();// Grand father method
-			s.Car(); // Father method
-			s.home();// Father method
-			s.mobile();// son method
+        void tax(int s);
 
-			// Daughter object
-			Daughter d = new Daughter();
-			d.land();// Grand father method
-			d.Car(); // Father method
-			d.home();// Father method
-			d.purse();// son method
-			Console.ReadLine();
-        }
+        void total_salay();
+
+        void month_salary();
     }
 
+    class Engineer : emp
+    {
+        int sal;
+        int tx;
+        int total;
+        int month;
+        public void month_salary()
+        {
+            month = total * 30;
+            Console.WriteLine($"this is total salary of month  {month}");
+        }
+     
+
+        public void salary(int hr, int rupes)
+        {
+            sal = hr * rupes;
+            Console.WriteLine(sal);
+        }
+
+        public void tax(int s)
+        {
+            tx = sal * s / 100;
+            Console.WriteLine(tx);
+        }
+        
+        public void total_salay()
+        {
+            total = sal - tx;
+                        Console.WriteLine(total);
+
+        }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Engineer k = new Engineer();
+            k.salary(5, 400);
+            k.tax(5);
+            k.total_salay();
+            k.month_salary();
+            Console.ReadLine();
+        }
+    }
 }
