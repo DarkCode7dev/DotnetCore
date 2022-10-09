@@ -26,3 +26,4 @@
                         <option>Choose the Category</option>
                         <option></option>
                     </select>
+https://stackoverflow.com/questions/64751009/asp-net-core-mvc-problem-with-passing-parameters-from-the-view-to-the-controll/64751609#64751609
