@@ -1,0 +1,67 @@
+<div class="row">
+    <label>protect</label>
+    <select></select>
+    <label>statt Date</label>
+    <input type="text">
+    <label>statt Date</label>
+    <input type="text">
+    <label>protect</label>
+    <select></select>
+  </div>
+  <div class="row">
+    <label>protect</label>
+    <select></select>
+    <label>statt Date</label>
+    <select></select>
+    <label>statt Date</label>
+    <select></select>
+    <label>protect</label>
+    <select></select>
+  </div>
+</div>
+<style>
+    /* Common styles for both laptop and mobile */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.row label {
+  margin-right: 5px;
+}
+
+.row select,
+.row input[type="text"] {
+  margin-right: 10px;
+}
+
+/* Styles for laptops */
+@media (min-width: 768px) {
+  /* Adjust the styles for laptops here */
+  .row label {
+    width: 100px;
+    text-align: right;
+  }
+}
+
+/* Styles for mobile devices */
+@media (max-width: 767px) {
+  /* Adjust the styles for mobile devices here */
+  .row label {
+    width: 80px;
+    text-align: left;
+    margin-bottom: 5px;
+  }
+
+  .row select,
+  .row input[type="text"] {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+}
+
+</style>  
